@@ -1,0 +1,129 @@
+/* Folha de Estilo */
+
+/* seletor{
+    propriedade:valor;
+} */
+
+:root{
+    --primary: #225C72;
+    --secondary:#2775A6;
+    --contrast: #162C41;
+    --gray:#666666;
+    --gray-light: #EEEEEE;
+}
+
+body{
+    height: 100vh; /*VH (View Height) -> Unidade de medida relacionada à tela/browser*/
+    margin: 0;
+    /* background-color: var(--primary); fundo sólido */ 
+    /* background-image: url(../img/bg.jpg); para colocar imagens no fundo */
+    background-image: linear-gradient(var(--primary), var(--contrast)); 
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /*esconder a barra de rolagem */
+}
+
+div{
+    width: 70%; /*largura inicial*/
+    max-width: 340px; /*largura máxima (400- 60 do padding)*/
+    height: auto; /*altura- interessante deixar a altura em auto pq ela vai mudando automaticamente de acordo com a quantidade de conteúdo que tem dentro*/
+    background-color: var(--gray-light);
+    /* margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px; */
+    margin:50px auto; /* espaçamento externo. O primeiro valor referente a vertical(top/botton) o segundo valor referente a horizontal(right/left)*/
+    text-align: center;
+    padding: 30px; /*espaçamento interno*/
+    border-radius: 10px;
+}
+
+img{
+    width: 100px;
+    border-radius: 50%;
+
+    /* border-width: 5px; /*vê no figma dando zoom na borda quantos pixels tem
+    border-color: var(--primary);
+    border-style: solid; */
+
+    /*outra forma de escrever a mudança de borda e cor de forma mais sucinta*/
+    border: solid 5px var(--primary);
+}
+
+h1{
+    color: var(--contrast);
+    /* font-weight: 700; podemos não colocar esse negrito pois é uma formatação padrão que já vem nos títulos, geralmente o pessoal tira o negrito quando não quer o texto nessa formação */
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--secondary);
+    font-size: 20px;
+}
+
+p{
+    margin-top: 10px;
+    color: var(--gray);
+    /* o paragráfo não mexemos porque já é padrão vir o tamanho 16 */
+}
+
+ul{
+    padding: 0;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+#app{
+    display: none;
+}
+
+a{
+    color: var(--primary);
+    text-decoration: none;
+}
+
+ul a{
+    background-color: var(--primary);
+    display: block; /*o link irá se comportar em bloco*/
+    color:#EEEEEE;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* padding: 10px 0 primeiro valor vertical e segundo horizontal. outra forma de escrever o código de cima */
+    border-radius: 3px;
+}
+
+/*ao passar o mouse*/
+ul a:hover{
+    background-color: var(--contrast);
+}
+
+/* Media Query */
+
+@media (max-width:768px){ /*até a tela de 768px ele tem que aparecer maior que isso não aparece, entre parênteses entra a condição*/
+
+    #app{
+        display: block;
+    }
+
+    body{
+        overflow: auto; /*habilita a barra de rolagem do body*/
+    }
+}
+
+/* 
+Elementos inline
+Dividem a mesma linha
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Inline_elements
+
+Elementos block
+Ocupam a linha inteira
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Block-level_elements
+*/
